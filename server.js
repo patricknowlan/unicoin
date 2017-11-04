@@ -17,25 +17,48 @@ app.use(bodyParser.json());
 // =============================================================
 var users = [
   {
-    routeName: "yoda",
-    name: "Yoda",
-    role: "Jedi Master",
-    age: 900,
-    forcePoints: 2000
+    "id": 1,
+    "userName": "lundstrom",
+    "firstName": "Jeremy",
+    "lastName": "Lundstrom",
+    "walletAddress": "0x0e9b86F67E32898A6080D595616486FeFb0b46BD",
+    "unicoinBalance": null,
+    "transactions": [],
+    "picture": "picture.png",
+    "jobTitle": "Consultant"
   },
   {
-    routeName: "darthmaul",
-    name: "Darth Maul",
-    role: "Sith Lord",
-    age: 200,
-    forcePoints: 1200
+    "id": 2,
+    "userName": "kirkpatrick",
+    "firstName": "Cullen",
+    "lastName": "Kirkpatrick",
+    "walletAddress": "0x0e9b86F67E32898A6080D595616486FeFb0b46BD",
+    "unicoinBalance": null,
+    "transactions": [],
+    "picture": "picture.png",
+    "jobTitle": "Consultant"
   },
   {
-    routeName: "obiwankenobi",
-    name: "Obi Wan Kenobi",
-    role: "Jedi Master",
-    age: 55,
-    forcePoints: 1350
+    "id": 1,
+    "userName": "knowlan",
+    "firstName": "Patrick",
+    "lastName": "Knowlan",
+    "walletAddress": "0x022e7A06f2DE6FD453227fEfa29fc5FD490879B5",
+    "unicoinBalance": null,
+    "transactions": [],
+    "picture": "picture.png",
+    "jobTitle": "Consultant"
+  },
+  {
+    "id": 3,
+    "userName": "sharpe",
+    "firstName": "Larry",
+    "lastName": "Sharpe",
+    "walletAddress": "0x0e9b86F67E32898A6080D595616486FeFb0b46BD",
+    "unicoinBalance": 0,
+    "transactions": [],
+    "picture": "picture.png",
+    "jobTitle": "Consultant"
   }
 ];
 
@@ -52,13 +75,13 @@ app.get("/users", function(req, res) {
 
 // Search for Specific Character (or all characters) - provides JSON
 app.get("/api/:users?", function(req, res) {
-  var chosen = req.params.users;
+  var chosen = req.params.usersId;
 
   if (chosen) {
     console.log(chosen);
 
     for (var i = 0; i < users.length; i++) {
-      if (chosen === users[i].routeName) {
+      if (chosen === users[i].id) {
         return res.json(users[i]);
       }
     }
