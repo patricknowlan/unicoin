@@ -14,6 +14,11 @@ var port = process.env.PORT || 8080;
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 var Web3 = require('web3');
 web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/"));
