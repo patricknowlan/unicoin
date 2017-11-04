@@ -1,0 +1,114 @@
+[
+  {
+    "id": 2,
+    "img": "cullen.png",
+    "name": "Cullen Kirkpatrick",
+    "fname": "Cullen",
+    "lname": "Kirkpatrick",
+    "title": "Front End Developer",
+    "slug": "cullen_kirkpatrick",
+    "username": null,
+    "social_media": [
+      {
+        "media": "twitter",
+        "link": "https://twitter.com/CullenKirkpatrk"
+      },
+      {
+        "media": "linkedin",
+        "link": "https://www.linkedin.com/in/cullen-kirkpatrick-6a397846"
+      },
+      {
+        "media": "github",
+        "link": "https://github.com/cjk101812"
+      }
+    ],
+    "wallet_address": "0x75f628f2aCB0ADa5A48D329319c185dbf7f2BB59",
+    "unicoin_balance": 0,
+    "transactions": []
+  },
+  {
+    "id": 1,
+    "img": "jeremy-lundstrom.png",
+    "name": "Jeremy Lundstrom",
+    "fname": "Jeremy",
+    "lname": "Lundstrom",
+    "title": "Developer",
+    "slug": "jeremy_lundstrom",
+    "username": null,
+    "social_media": [
+      {
+        "media": "twitter",
+        "link": "https://twitter.com/lundstjb"
+      },
+      {
+        "media": "facebook",
+        "link": "https://www.facebook.com/jeremy.lundstrom.5"
+      },
+      {
+        "media": "linkedin",
+        "link": "https://www.linkedin.com/in/jeremylundstrom"
+      },
+      {
+        "media": "github",
+        "link": "https://github.com/lundstjb"
+      }
+    ],
+    "wallet_address": "0x0e9b86F67E32898A6080D595616486FeFb0b46BD",
+    "unicoin_balance": 0,
+    "transactions": []
+  },
+  {
+    "id": 3,
+    "img": "patrick.png",
+    "name": "Patrick Knowlan",
+    "fname": "Patrick",
+    "lname": "Knowlan",
+    "title": "Data Engineer",
+    "slug": "patrick_knowlan",
+    "username": null,
+    "social_media": [
+      {
+        "media": "twitter",
+        "link": "https://twitter.com/patricknowlan"
+      },
+      {
+        "media": "linkedin",
+        "link": "https://www.linkedin.com/in/patricknowlan/"
+      },
+      {
+        "media": "github",
+        "link": "https://github.com/patricknowlan"
+      }
+    ],
+    "wallet_address": "0x022e7A06f2DE6FD453227fEfa29fc5FD490879B5",
+    "unicoin_balance": 0,
+    "transactions": []
+  },
+  {
+    "id": 4,
+    "img": "larry-sharpe.png",
+    "name": "Larry Sharpe",
+    "fname": "Larry",
+    "lname": "Sharpe",
+    "title": "Developer",
+    "slug": "larry_sharpe",
+    "username": null,
+    "social_media": [
+      {
+        "media": "facebook",
+        "link": "https://facebook.com/lshizo"
+      },
+      {
+        "media": "linkedin",
+        "link": "https://www.linkedin.com/in/iamsharpe/"
+      },
+      {
+        "media": "github",
+        "link": "https://github.com/larrysharpe"
+      }
+    ],
+    "wallet_address": "0x5f5c03f9bdb02e911ca84d0c350da895a5769137",
+    "unicoin_balance": 0,
+    "transactions": []
+  }
+]
