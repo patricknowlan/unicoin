@@ -6,6 +6,7 @@ var path = require("path");
 var _ = require('lodash');
 var Promise = require('promise');
 var users = require("./users.json");
+var products = require("./products.json");
 var ethInterface = require('./interface.json');
 
 // Sets up the Express App
@@ -69,6 +70,15 @@ app.get("/users/:id?", function(req, res) {
       }
     }
   }
+});
+
+app.get("/products", function(req, res) {
+  res.json(products);
+});
+
+app.get("/products/:id?", function(req, res) {
+  var productPage = require('./products/' + req.params.id +'.json');
+  res.json(productPage);
 });
 
 
