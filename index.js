@@ -3,6 +3,8 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+var _ = require('lodash');
+var Promise = require('promise');
 var users = require("./users.json");
 var ethInterface = require('./interface.json');
 
@@ -33,6 +35,18 @@ var myContract = new web3.eth.Contract(ethInterface, "0x9b143D56cAf24e471BB54a50
 
 // Get all characters
 app.get("/users", function(req, res) {
+  var balancePromises = [];
+    var batch = new web3.BatchRequest();
+  _.forEach(users, function(user) {
+    batch.add((myContract.methods.balanceOf(user.walletAddress).call.request({from: user.wallet}, callback)));
+    //console.log(user);
+  });
+
+
+  // batch.add(web3.eth.getBalance.request('0x0000000000000000000000000000000000000000', 'latest', callback));
+  // batch.add(contract.methods.balance(address).call.request({from: '0x0000000000000000000000000000000000000000'}, callback2));
+  batch.execute();
+
   res.json(users);
 });
 
@@ -46,8 +60,10 @@ app.get("/users/:id?", function(req, res) {
     for (var i = 0; i < users.length; i++) {
       if (chosen == users[i].id) {
         selectedUser = users[i];
-        myContract.methods.balanceOf(users[i].walletAddress).call({from: '0x75f628f2aCB0ADa5A48D329319c185dbf7f2BB59'}, function(error, result){
-          selectedUser.unicoinBalance = result;
+        console.log(users[i].wallet_address);
+        myContract.methods.balanceOf(users[i].wallet_address).call({from: '0x75f628f2aCB0ADa5A48D329319c185dbf7f2BB59'}, function(error, result){
+          console.log(result);
+          selectedUser.unicoin_balance = result;
           return res.json(selectedUser);
         });
       }
@@ -61,3 +77,8 @@ app.get("/users/:id?", function(req, res) {
 app.listen(port, function() {
   console.log("App listening on PORT " + port);
 });
+
+function callback(error, result) {
+  console.log('In callback');
+  console.log(result);
+}
