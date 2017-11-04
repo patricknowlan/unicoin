@@ -33,6 +33,10 @@ var myContract = new web3.eth.Contract(ethInterface, "0x9b143D56cAf24e471BB54a50
 
 // Basic route that sends the user first to the AJAX Page
 
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "dist/index.html"));
+});
+
 
 // Get all characters
 app.get("/users", function(req, res) {
