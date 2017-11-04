@@ -74,14 +74,16 @@ app.get("/users", function(req, res) {
 });
 
 // Search for Specific Character (or all characters) - provides JSON
-app.get("/api/:users?", function(req, res) {
-  var chosen = req.params.usersId;
+// Search for Specific Character (or all characters) - provides JSON
+app.get("/users/:id?", function(req, res) {
+  var chosen = req.params.id;
+  console.log(chosen);
 
   if (chosen) {
     console.log(chosen);
 
     for (var i = 0; i < users.length; i++) {
-      if (chosen === users[i].id) {
+      if (chosen == users[i].id) {
         return res.json(users[i]);
       }
     }
