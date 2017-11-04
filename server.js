@@ -47,12 +47,12 @@ var users = [
 
 // Get all characters
 app.get("/users", function(req, res) {
-  res.json(characters);
+  res.json(users);
 });
 
 // Search for Specific Character (or all characters) - provides JSON
 app.get("/api/:users?", function(req, res) {
-  var chosen = req.params.characters;
+  var chosen = req.params.users;
 
   if (chosen) {
     console.log(chosen);
